@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.8s ease;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.non-draggable {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+header {
+    width: 100%;
+    background: rgba(244, 242, 239, 0.8);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.top {
+    height: 6rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.top a {
+    color: #b33a32;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.top a:hover {
+    text-decoration: underline;
+}
+
+.small-logo {
+    position: absolute;
+    left: calc(50% - 18rem);
+    width: 4.5rem;
+}
+
+.small-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.account {
+    position: absolute;
+    right: calc(50% - 18rem);
+    width: 7rem;
+    height: 2.8rem;
+    border-radius: 2rem;
+    background: rgba(55, 55, 55, 0.85);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+nav {
+    height: 5.5rem;
+}
+
+nav ul {
+    height: 100%;
+    width: 54rem;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:4rem;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #4b4b4b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav a:hover{
+    color: #989898;
+}
+
+.nav-hover-current {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+main {
+    width: 100%;
+}
+
+.page {
+    width: 100%;
+    padding-top: 4rem;
+}
+
+.home-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.picture {
+    position: relative;
+    width: 50rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 50rem;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.intro-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55%;
+    min-height: 1rem;
+    padding: 1.2rem 1.5rem;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+footer {
+    min-height: 16rem;
+    margin-top: 1rem;
+    background: black;
+    color: white;
+    position: relative;
+    font-size: 0.8rem;
+}
+
+.social {
+    width: 25rem;
+    position: absolute;
+    left: 50%;
+    top: 3rem;
+    transform: translateX(-50%);
+}
+
+.social-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem; 
+}
+
+.social-line i {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 1.3rem;
+}
+
+.social-line span,.social-line i,.social-line a,.social-line a:visited{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.copyright {
+    position: absolute;
+    bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.copyright p {
+    margin: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .top {
+        height: 5rem;
+    }
+
+    .top p {
+        font-size: 0.72rem;
+    }
+
+    .small-logo {
+        left: 1rem;
+        width: 3rem;
+    }
+
+    .account {
+        right: 1rem;
+        width: 5.5rem;
+        height: 2.4rem;
+    }
+
+    nav {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        width: 94%;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    .page {
+        padding-top: 2rem;
+    }
+
+    .picture {
+        width: 94%;
+        max-width: none;
+    }
+
+    .intro-box {
+        width: 75%;
+        padding: 1rem;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+
+    .social {
+        width: 80%;
+    }
+}
