@@ -9,6 +9,7 @@
     <link rel="icon" type="image/ico" sizes="16x16" href="images\favicon.ico">
 
     <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="kids-styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,10 +51,58 @@
     </header>
 
     <main>
-        <section class="">
+        <h1>Art Classes for Kids</h1>
+        <section class="kids-description">
+            <div class="text-box">
+                Enroll your child in painting classes and unlock the realm of creativity. 
+                These classes provide a platform for children to <strong>express</strong> themselves and bring their <strong>unique</strong> ideas to life. 
+                They will learn to observe complex photos and translate them into painting using simple shapes. 
+                Through these classes, their hand-eye coordination will improve, and they will have the opportunity to let their imagination flourish through techniques like coloring and perspective. 
+                This artistic journey nurtures their creativity and fosters the development of fine motor skills.
+            </div>
+        </section>
 
+        <section class="slideshow-section">
+            <div class="slideshow">
+                <div class="slideshow-main">
+                    <img class="slide active" src="images\toucan.png">
+                    <img class="slide" src="images\tasse.png">
+                    <img class="slide" src="images\rooster.jpeg">
+                    <img class="slide" src="images\deer.jpg">
+                    <img class="slide" src="images\butterfly.png">
+                    <img class="slide" src="images\heart.png">
+                    <img class="slide" src="images\house.jpeg">
+                    <img class="slide" src="images\dog.png">
+                    <img class="slide" src="images\turtle.png">
+                    <img class="slide" src="images\panda.jpg">
+                    <img class="slide" src="images\perro2.png">
 
+                    <button class="back-arrow" onclick="manualPrev()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
 
+                    <button class="next-arrow" onclick="manualNext()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="thumbnail-window">
+                    <div class="slideshow-thumbnails">
+                        <img class="non-draggable" src="images\toucan.png" onclick="selectSlide(0)">
+                        <img class="non-draggable" src="images\tasse.png" onclick="selectSlide(1)">
+                        <img class="non-draggable" src="images\rooster.jpeg" onclick="selectSlide(2)">
+                        <img class="non-draggable" src="images\deer.jpg" onclick="selectSlide(3)">
+                        <img class="non-draggable" src="images\butterfly.png" onclick="selectSlide(4)">
+                        <img class="non-draggable" src="images\heart.png" onclick="selectSlide(5)">
+                        <img class="non-draggable" src="images\house.jpeg" onclick="selectSlide(6)">
+                        <img class="non-draggable" src="images\dog.png" onclick="selectSlide(7)">
+                        <img class="non-draggable" src="images\turtle.png" onclick="selectSlide(8)">
+                        <img class="non-draggable" src="images\panda.jpg" onclick="selectSlide(9)">
+                        <img class="non-draggable" src="images\perro2.png" onclick="selectSlide(10)">
+
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -81,5 +130,90 @@
             <p>All rights reserved.</p>
         </div>
     </footer>
+
+
+    <script>
+        const slides = document.querySelectorAll(".slideshow-main .slide");
+        const thumbnails = document.querySelector(".slideshow-thumbnails");
+        const thumbnailImages = document.querySelectorAll(".slideshow-thumbnails img");
+
+
+
+        let currentSlide = 0;
+        let slideTimer;
+
+        function showSlide(index) {
+            slides.forEach(function(slide) {
+                slide.classList.remove("active");
+            });
+
+            currentSlide = index;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            slides[currentSlide].classList.add("active");
+
+            moveThumbnails();
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function manualNext() {
+            nextSlide();
+            resetTimer();
+        }
+
+        function selectSlide(index) {
+            showSlide(index);
+            resetTimer();
+        }
+
+        function prevSlide() {
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            showSlide(currentSlide);
+        }
+
+        function manualPrev() {
+            prevSlide();
+            resetTimer();
+        }
+
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, 3000);
+        }
+
+
+        function moveThumbnails() {
+        const visibleThumbnails = 5;
+        const maxPosition = thumbnailImages.length - visibleThumbnails;
+
+        let position = currentSlide;
+
+        if (position > maxPosition) {
+            position = maxPosition;
+        }
+
+        if (position < 0) {
+            position = 0;
+        }
+
+        thumbnails.style.transform =
+            "translateX(-" + (position * 6) + "rem)";
+    }
+        resetTimer();
+    </script>
+
 </body>
 </html>

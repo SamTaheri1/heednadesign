@@ -1,0 +1,129 @@
+.slideshow {
+    width: 30rem;
+    max-width: 90%;
+    margin: 5rem auto;
+}
+
+
+.slideshow-main {
+    width: 20rem;
+    height: 16rem;
+    margin: 0 auto 0.7rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-main .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+
+.slideshow-main .slide.active {
+    opacity: 1;
+}
+
+.slideshow-thumbnails {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    transition: transform 0.4s ease;
+
+}
+
+.slideshow-thumbnails img {
+    width: 5.5rem;
+    height: 5.5rem;
+    object-fit: cover;
+    flex-shrink: 0;
+    cursor: pointer;
+
+}
+
+.slideshow-thumbnails img:hover {
+    opacity: 1;
+}
+
+.thumbnail-window {
+    width: 30rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+
+.next-arrow {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity:0.7;
+    transition: opacity 0.5s ease;
+}
+
+.next-arrow:hover {
+    background: white;
+    opacity: 1;
+}
+
+
+.back-arrow {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: white;
+    width: 2.8rem;
+    height: 2.8rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.4rem;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.back-arrow:hover {
+    background: white;
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .slideshow {
+        width: 92%;
+        max-width: none;
+    }
+
+    .slideshow-main {
+        width: 100%;
+        height: 20rem;
+    }
+
+    .slideshow-thumbnails {
+        gap: 0.4rem;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .slideshow-thumbnails img {
+        width: 4rem;
+        height: 4rem;
+        flex-shrink: 0;
+    }
+}
