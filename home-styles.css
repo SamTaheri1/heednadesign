@@ -35,6 +35,9 @@ header {
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
 }
 
 .top {
@@ -90,6 +93,10 @@ header {
 
 nav {
     height: 5.5rem;
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+
 }
 
 nav ul {
@@ -116,11 +123,29 @@ nav a {
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
+    position: relative;
 }
 
-.nav a:hover{
-    color: #989898;
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background: #000000;
+    transition: width 0.3s ease;
 }
+
+nav a:hover {
+    color: #000000;
+    font-weight: 600;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 
 .nav-hover-current {
     color: #000000;
@@ -236,6 +261,71 @@ footer {
     margin: 0.2rem;
 }
 
+
+
+/* dropdown menu for classes */
+
+.dropdown {
+    position: relative;
+    padding-bottom: 0.7rem;
+    margin-bottom: -0.7rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    min-width: 14rem;
+    margin: 0;
+    padding: 0.6rem 0;
+    visibility: hidden;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    background: rgba(244, 242, 239, 0.4);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    color: #4b4b4b;
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.5s ease;
+}
+
+.dropdown-menu a:hover {
+    color: #000000;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+
+
+
 @media (max-width: 768px) {
     .top {
         height: 5rem;
@@ -294,5 +384,14 @@ footer {
 
     .social {
         width: 80%;
+    }
+
+    .dropdown-menu {
+        min-width: 12rem;
+    }
+
+    .dropdown-menu a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
     }
 }
