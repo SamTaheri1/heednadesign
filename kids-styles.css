@@ -104,6 +104,53 @@
 }
 
 
+.testimony-images {
+    display: block;
+    width: 800px;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.testimony-animation {
+    opacity: 0;
+}
+
+.testimony-animation.show {
+    animation: imageSlide 2s ease forwards;
+}
+
+.testimony-button {
+    display: block;
+    width: fit-content;
+    margin: 4rem auto 0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    background: #e8ddcc;
+    color: black;
+    text-decoration: none;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.testimony-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+@keyframes imageSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-800px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
     .slideshow {
         width: 92%;
