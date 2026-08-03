@@ -1,0 +1,53 @@
+.bio-box{
+    padding-top:1.5rem;
+    width:40rem;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 2;
+    font-size: 1rem;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    padding-top:1.5rem;
+}
+
+.social-box{
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+    transform: translateX(-8rem);
+
+}
+
+.social-box-title{
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.social-box-text{
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.social-top {
+    position: relative;
+}
+
+
+.social-icons {
+    position: absolute;
+    left: 20rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a,
+.social-icons a:visited,
+.social-icons a:active {
+    color: black;
+    text-decoration: none;
+}

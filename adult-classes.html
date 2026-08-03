@@ -30,7 +30,7 @@
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
                 <div class="small-logo">
-                <img class="non-draggable" src="images\logo.png">
+                <a href="index.html"><img class="non-draggable" src="images\logo.png"></a>
             </div>
         </div>
 
@@ -92,13 +92,13 @@
 
                 <div class="thumbnail-window">
                     <div class="slideshow-thumbnails">
-                        <img class="non-draggable" src="images\flower.jpg">
-                        <img class="non-draggable" src="images\bird.jpeg">
-                        <img class="non-draggable" src="images\adult1.png">
-                        <img class="non-draggable" src="images\adult2.png">
-                        <img class="non-draggable" src="images\adult3.png">
-                        <img class="non-draggable" src="images\adult4.png">
-                        <img class="non-draggable" src="images\adult5.png">
+                        <img class="non-draggable" src="images\flower.jpg" onclick="selectSlide(0)">
+                        <img class="non-draggable" src="images\bird.jpeg" onclick="selectSlide(1)">
+                        <img class="non-draggable" src="images\adult1.png" onclick="selectSlide(2)">
+                        <img class="non-draggable" src="images\adult2.png" onclick="selectSlide(3)">
+                        <img class="non-draggable" src="images\adult3.png" onclick="selectSlide(4)">
+                        <img class="non-draggable" src="images\adult4.png" onclick="selectSlide(5)">
+                        <img class="non-draggable" src="images\adult5.png" onclick="selectSlide(6)">
                     </div>
                 </div>
                 
@@ -146,7 +146,7 @@
 
 
 
-        <!--JS for slideshows-->
+    <!--JS for slideshows-->
 
     <script>
         const slides = document.querySelectorAll(".slideshow-main .slide");
