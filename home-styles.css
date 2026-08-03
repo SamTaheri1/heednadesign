@@ -268,9 +268,13 @@ footer {
 
 h1{
     text-align: center;
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 
+h2{
+    text-align: center; 
+    font-size: 1.375rem;
+}
 
 
 /* dropdown menu for classes */

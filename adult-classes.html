@@ -9,6 +9,8 @@
     <link rel="icon" type="image/ico" sizes="16x16" href="images\favicon.ico">
 
     <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="kids-styles.css">
+    <link rel="stylesheet" href="adult-styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +52,71 @@
     </header>
 
     <main>
-        <section class="">
-
-
-
+       <h1>Drawing & Painting</h1>
+       <h2>Adult Courses</h2>
+        <section class="kids-description">
+            <div class="text-box">
+                We offer different levels from <strong>beginners to advanced.</strong> We offer online and in-person drawing and painting courses for <strong>all ages and levels.</strong>
+                <br>
+                <br>
+                <strong>Drawing courses:</strong> Adult art classes provide a platform for students to explore and understand perspective, lighting, and contrast through drawing.
+                They learn to capture photos, including still life, nature, landscapes, and portraits.
+                By developing their drawing skills and hand-eye coordination, they enhance their artistic abilities.
+                These classes also introduce techniques like hatching, cross-hatching, and blending, using different materials for artistic expression.
+                <br>
+                <br>
+                <strong>Painting courses:</strong> In the art classes, students will be taught various techniques for painting different objects using oil and acrylic paints. 
+                They will learn how to mix colors, work with tonal values, and create well-balanced compositions.
+            </div>
         </section>
 
+        <section class="slideshow-section">
+            <div class="slideshow">
+                <div class="slideshow-main">
+                    <img class="slide active" src="images\flower.jpg">
+                    <img class="slide" src="images\bird.jpeg">
+                    <img class="slide" src="images\adult1.png">
+                    <img class="slide" src="images\adult2.png">
+                    <img class="slide" src="images\adult3.png">
+                    <img class="slide" src="images\adult4.png">
+                    <img class="slide" src="images\adult5.png">
+
+                    <button class="back-arrow" onclick="manualPrev()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <button class="next-arrow" onclick="manualNext()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="thumbnail-window">
+                    <div class="slideshow-thumbnails">
+                        <img class="non-draggable" src="images\flower.jpg">
+                        <img class="non-draggable" src="images\bird.jpeg">
+                        <img class="non-draggable" src="images\adult1.png">
+                        <img class="non-draggable" src="images\adult2.png">
+                        <img class="non-draggable" src="images\adult3.png">
+                        <img class="non-draggable" src="images\adult4.png">
+                        <img class="non-draggable" src="images\adult5.png">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <h1>Testimonies</h1>
+        <section class="parent-testimony-section">
+            <div class="testimony-animation">
+                <div class="testimony-animation">
+                    <img class="testimony-images non-draggable" src="images\testimony_adults.png">
+                </div>
+            </div>
+
+            <a href="mailto:heednadesign@gmail.com" class="testimony-button">Send Your Testimony Here!</a>
+            <br>
+            <br>
+        </section>
     </main>
 
     <footer>
@@ -81,5 +142,119 @@
             <p>All rights reserved.</p>
         </div>
     </footer>
+
+
+
+
+        <!--JS for slideshows-->
+
+    <script>
+        const slides = document.querySelectorAll(".slideshow-main .slide");
+        const thumbnails = document.querySelector(".slideshow-thumbnails");
+        const thumbnailImages = document.querySelectorAll(".slideshow-thumbnails img");
+
+
+
+        let currentSlide = 0;
+        let slideTimer;
+
+        function showSlide(index) {
+            slides.forEach(function(slide) {
+                slide.classList.remove("active");
+            });
+
+            currentSlide = index;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            slides[currentSlide].classList.add("active");
+
+            moveThumbnails();
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function manualNext() {
+            nextSlide();
+            resetTimer();
+        }
+
+        function selectSlide(index) {
+            showSlide(index);
+            resetTimer();
+        }
+
+        function prevSlide() {
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            showSlide(currentSlide);
+        }
+        
+
+        function manualPrev() {
+            prevSlide();
+            resetTimer();
+        }
+
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, 3000);
+        }
+
+
+        function moveThumbnails() {
+        const visibleThumbnails = 5;
+        const maxPosition = thumbnailImages.length - visibleThumbnails;
+
+        let position = currentSlide;
+
+        if (position > maxPosition) {
+            position = maxPosition;
+        }
+
+        if (position < 0) {
+            position = 0;
+        }
+
+        thumbnails.style.transform =
+            "translateX(-" + (position * 6) + "rem)";
+    }
+        resetTimer();
+    </script>
+
+
+
+
+    <!--JS for image animation tracking-->
+
+    <script>
+        const testimonyItems =
+            document.querySelectorAll(".testimony-animation");
+
+        const testimonyObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        testimonyItems.forEach(function(item) {
+            testimonyObserver.observe(item);
+        });
+    </script>
+
 </body>
 </html>
