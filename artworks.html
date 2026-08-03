@@ -9,6 +9,7 @@
     <link rel="icon" type="image/ico" sizes="16x16" href="images\favicon.ico">
 
     <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="kids-styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,8 +51,33 @@
     </header>
 
     <main>
-        <section class="">
+        <p class="custom-text-box" style="margin-top: 2rem">Nahid Rafie</p>
+        <section class="artwork-slideshow">
+            <div class="slideshow">
+                <div class="slideshow-main">
+                    <img class="slide active" src="images\IMG_0707.png">
+                    <img class="slide" src="images\IMG_0711.png">
+                    <img class="slide" src="images\IMG_0709.png">
+                    <img class="slide" src="images\IMG_0703.png">
 
+                    <button class="back-arrow" onclick="manualPrev()">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <button class="next-arrow" onclick="manualNext()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="thumbnail-window">
+                    <div class="slideshow-thumbnails">
+                        <img class="non-draggable" src="images\IMG_0707.png" onclick="selectSlide(0)">
+                        <img class="non-draggable" src="images\IMG_0711.png" onclick="selectSlide(1)">
+                        <img class="non-draggable" src="images\IMG_0709.png" onclick="selectSlide(2)">
+                        <img class="non-draggable" src="images\IMG_0703.png" onclick="selectSlide(3)">
+                    </div>
+                </div>   
+            </div>
 
 
         </section>
@@ -81,5 +107,7 @@
             <p>All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="slideshow.js"></script>
 </body>
 </html>

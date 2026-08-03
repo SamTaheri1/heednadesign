@@ -210,6 +210,14 @@ main {
     font-size: 1rem;
 }
 
+.custom-text-box{
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+    transform: translateX(-25rem);
+    font-size: 1.875rem;
+}
+
 footer {
     min-height: 16rem;
     margin-top: 1rem;
