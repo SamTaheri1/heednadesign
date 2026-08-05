@@ -100,3 +100,26 @@ const testimonyObserver = new IntersectionObserver(function(entries) {
 testimonyItems.forEach(function(item) {
     testimonyObserver.observe(item);
 });
+
+
+
+//JS for mobile navbar button and animation
+
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", function(event) {
+    event.stopPropagation();
+
+    navLinks.classList.toggle("show-menu");
+    menuButton.classList.toggle("rotate");
+});
+
+navLinks.addEventListener("click", function(event) {
+    event.stopPropagation();
+});
+
+document.addEventListener("click", function() {
+    navLinks.classList.remove("show-menu");
+    menuButton.classList.remove("rotate");
+});

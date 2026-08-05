@@ -6,6 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     animation: fadeIn 0.8s ease;
+    overflow-x: hidden;
 }
 
 body {
@@ -196,7 +197,7 @@ main {
     margin: 0;
 }
 
-.intro-box {
+#intro-box {
     position: absolute;
     top: 55%;
     left: 50%;
@@ -207,6 +208,7 @@ main {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     line-height: 2;
+    font-size: 1.25rem;
 }
 
 .text-box{
@@ -279,7 +281,7 @@ footer {
 }
 
 .copyright p {
-    margin: 0.2rem;
+    margin: 0.8rem;
 }
 
 .copyright a{
@@ -372,26 +374,41 @@ h2{
     display: none;
 }
 
-
+.menu-button {
+    display: none;
+}
 
 
 @media (max-width: 768px) {
+
+    body{
+        font-size: 0.9rem;
+    }
+
     .top {
-        height: 5rem;
+        height: 1rem;
+        padding-top: 2.5rem;
     }
 
     .top p {
         font-size: 0.72rem;
     }
 
+
     .small-logo {
         left: 1rem;
         width: 3rem;
     }
 
+    .logo{
+        position:relative;
+        width: 40rem;
+        padding-bottom:3rem;
+    }
+
     .account {
         right: 1rem;
-        width: 5.5rem;
+        width: 4rem;
         height: 2.4rem;
     }
 
@@ -412,7 +429,7 @@ h2{
     }
 
     .page {
-        padding-top: 2rem;
+        padding-top: 3rem;
     }
 
     .picture {
@@ -420,11 +437,42 @@ h2{
         max-width: none;
     }
 
-    .intro-box {
-        width: 75%;
-        padding: 1rem;
-        font-size: 0.85rem;
+    #intro-box {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        width: 82%;
+        max-width: 18rem;
+        padding: 0.8rem 1rem;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem;
         line-height: 1.6;
+        box-sizing: border-box;
+    }
+
+    .text-box{
+        padding-top:1.5rem;
+        width: 85%;
+        text-align: justify;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 1rem;
+    }
+
+    h1{
+        font-size: 1.375rem;
+    }
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    h3{
+        font-size: 1.05rem;
+    }
+
+    h4{
+        font-size: 0.95rem;
     }
 
     footer {
@@ -442,5 +490,73 @@ h2{
     .dropdown-menu a {
         padding: 0.6rem 0.8rem;
         font-size: 0.75rem;
+    }
+    
+
+    .account {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        position: absolute;
+        right: 1.5rem;
+        top: 100%;
+        transform: translateY(-50%);
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: black;
+        font-size: 1.4rem;
+        cursor: pointer;
+        z-index: 1002;
+        transition: transform 0.25s ease;
+    }
+
+    .menu-button.rotate {
+        transform: translateY(-50%) rotate(-90deg);
+    }
+
+    nav {
+        position: static;
+    }
+
+    nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70vw;
+        height: auto;
+        margin: 0;
+        padding: 1.5rem 0;
+        background: rgba(255, 255, 255);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 1000;
+    }
+
+    nav .nav-links.show-menu {
+        display: flex;
+        animation: menuFade 0.5s ease;
+
+    }
+
+    @keyframes menuFade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    nav .nav-links > li {
+        width: 100%;
+        margin: 0;
+        text-align: center;
     }
 }
