@@ -160,6 +160,14 @@ nav a:hover::after {
     text-underline-offset: 5px;
 }
 
+.url {
+    color: blue;
+}
+
+.url:visited {
+    color: blue;
+}
+
 main {
     width: 100%;
     padding-top:1rem;
