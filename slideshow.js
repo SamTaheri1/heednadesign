@@ -61,6 +61,18 @@
 
 
     function moveThumbnails() {
+    if (window.innerWidth <= 768) {
+        thumbnails.style.transform = "none";
+
+        thumbnailImages[currentSlide].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+
+        return;
+    }
+
     const visibleThumbnails = 5;
     const maxPosition = thumbnailImages.length - visibleThumbnails;
 

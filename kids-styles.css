@@ -174,3 +174,16 @@
         flex-shrink: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .thumbnail-window {
+        width: 90%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .slideshow-thumbnails {
+        width: max-content;
+        transform: none;
+    }
+}
