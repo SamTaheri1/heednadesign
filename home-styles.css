@@ -2,18 +2,22 @@
     box-sizing: border-box;
 }
 
+html{
+    background: black;
+}
+
 html, body {
     margin: 0;
     padding: 0;
-    animation: fadeIn 0.8s ease;
     overflow-x: hidden;
     background: black;
+    animation: fadeIn 0.8s ease;
 }
+
 
 body {
     font-family: Questrial, Helvetica, sans-serif;
     background: white;
-    color: black;
     font-size: 1.2rem;
     text-align: justify;
     padding-top: 12rem;
