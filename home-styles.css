@@ -2,25 +2,20 @@
     box-sizing: border-box;
 }
 
-html{
-    background: black;
-}
 
 html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background: black;
     animation: fadeIn 0.8s ease;
+    background: black;
 }
 
 
 body {
     font-family: Questrial, Helvetica, sans-serif;
-    background: white;
     font-size: 1.2rem;
     text-align: justify;
-    padding-top: 12rem;
 }
 
 @keyframes fadeIn {
@@ -173,6 +168,8 @@ nav a:hover::after {
 main {
     width: 100%;
     padding-top:1rem;
+    background: white;
+    padding-top: 12rem;
 }
 
 .page {
@@ -398,7 +395,6 @@ h2{
 
     body{
         font-size: 0.9rem;
-        padding-top: 5rem;
     }
 
     .top {
@@ -474,7 +470,8 @@ h2{
     }
 
     main{
-        padding-top: 2rem;
+        padding-top: 7rem;
+        padding-bottom: 2rem;
     }
 
 
