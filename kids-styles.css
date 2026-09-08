@@ -5,6 +5,7 @@
 }
 
 
+
 .slideshow-main {
     width: 20rem;
     height: 16rem;
@@ -173,9 +174,7 @@
         height: 4rem;
         flex-shrink: 0;
     }
-}
 
-@media (max-width: 768px) {
     .thumbnail-window {
         width: 90%;
         overflow-x: auto;
@@ -185,5 +184,11 @@
     .slideshow-thumbnails {
         width: max-content;
         transform: none;
+    }
+
+    video {
+        display: block;
+        margin: 0 auto;
+        width:92%;
     }
 }

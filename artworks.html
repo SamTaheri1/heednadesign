@@ -61,35 +61,44 @@
 
     <main>
         <p class="custom-text-box" style="margin-top: 2rem">Nahid Rafie</p>
-        <section class="artwork-slideshow">
-            <div class="slideshow">
-                <div class="slideshow-main">
-                    <img class="slide active" src="images\IMG_0707.png" alt="Nahid Rafie Artwork 1">
-                    <img class="slide" src="images\IMG_0711.png" alt="Nahid Rafie Artwork 2">
-                    <img class="slide" src="images\IMG_0709.png" alt="Nahid Rafie Artwork 3">
-                    <img class="slide" src="images\IMG_0703.png" alt="Nahid Rafie Artwork 4">
+        <div class="content">
+            <video width="500px" controls autoplay muted>
+                <source src="videos\paintingclip_1.mp4" type="video/mp4">
+            </video>
+            <section class="artwork-slideshow">
+                <div class="slideshow">
+                    <div class="slideshow-main">
+                        <img class="slide active" src="images\IMG_0707.png" alt="Nahid Rafie Artwork 1">
+                        <img class="slide" src="images\IMG_0711.png" alt="Nahid Rafie Artwork 2">
+                        <img class="slide" src="images\IMG_0709.png" alt="Nahid Rafie Artwork 3">
+                        <img class="slide" src="images\IMG_0703.png" alt="Nahid Rafie Artwork 4">
+                        <img class="slide" src="images\IMG_0715.png" alt="Nahid Rafie Artwork 5">
+                        <img class="slide" src="images\IMG_0718.png" alt="Nahid Rafie Artwork 6">
 
-                    <button class="back-arrow" onclick="manualPrev()">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
+                        <button class="back-arrow" onclick="manualPrev()">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
 
-                    <button class="next-arrow" onclick="manualNext()">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <div class="thumbnail-window">
-                    <div class="slideshow-thumbnails">
-                        <img class="non-draggable" src="images\IMG_0707.png" alt="Nahid Rafie Artwork Thumbnail 1" onclick="selectSlide(0)">
-                        <img class="non-draggable" src="images\IMG_0711.png" alt="Nahid Rafie Artwork Thumbnail 2" onclick="selectSlide(1)">
-                        <img class="non-draggable" src="images\IMG_0709.png" alt="Nahid Rafie Artwork Thumbnail 3" onclick="selectSlide(2)">
-                        <img class="non-draggable" src="images\IMG_0703.png" alt="Nahid Rafie Artwork Thumbnail 4" onclick="selectSlide(3)">
+                        <button class="next-arrow" onclick="manualNext()">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
-                </div>   
-            </div>
 
-
-        </section>
+                    <div class="thumbnail-window">
+                        <div class="slideshow-thumbnails">
+                            <img class="non-draggable" src="images\IMG_0707.png" alt="Nahid Rafie Artwork Thumbnail 1" onclick="selectSlide(0)">
+                            <img class="non-draggable" src="images\IMG_0711.png" alt="Nahid Rafie Artwork Thumbnail 2" onclick="selectSlide(1)">
+                            <img class="non-draggable" src="images\IMG_0709.png" alt="Nahid Rafie Artwork Thumbnail 3" onclick="selectSlide(2)">
+                            <img class="non-draggable" src="images\IMG_0703.png" alt="Nahid Rafie Artwork Thumbnail 4" onclick="selectSlide(3)">
+                            <img class="non-draggable" src="images\IMG_0715.png" alt="Nahid Rafie Artwork Thumbnail 4" onclick="selectSlide(4)">
+                            <img class="non-draggable" src="images\IMG_0718.png" alt="Nahid Rafie Artwork Thumbnail 4" onclick="selectSlide(5)">
+                        </div>
+                    </div>
+                    <br> 
+                    <br>
+                </div>
+            </section>
+        </div>
 
     </main>
 
