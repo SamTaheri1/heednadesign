@@ -346,6 +346,7 @@ h2{
 .content{
     padding-top: 5rem;
     justify-self: center;
+    text-align: center;
 }
 
 
@@ -448,7 +449,7 @@ h2{
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
-.link-video{
+.link-courses{
     font-size: 1rem;
     color: #b33a32;
     text-decoration: underline;

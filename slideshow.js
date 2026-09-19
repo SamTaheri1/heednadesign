@@ -57,7 +57,7 @@ function manualPrev() {
 }
 function resetTimer() {
     clearInterval(slideTimer);
-    slideTimer = setInterval(nextSlide, 3000);
+    slideTimer = setInterval(nextSlide, 2000);
 }
 
 
